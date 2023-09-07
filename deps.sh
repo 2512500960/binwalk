@@ -116,7 +116,7 @@ function install_cramfstools
 function install_ubireader
 {
     git clone --quiet --depth 1 --branch "main" https://github.com/jrspruitt/ubi_reader
-    (cd ubi_reader && poetry install)
+    (cd ubi_reader && pip install)
     $SUDO rm -rf ubi_reader
 }
 
@@ -236,7 +236,7 @@ if [ $? -ne 0 ]
     echo "Package installation failed: $PKG_CANDIDATES"
     exit 1
 fi
-install_pip_package "setuptools matplotlib capstone pycryptodome gnupg tk poetry"
+install_pip_package "setuptools matplotlib capstone pycryptodome gnupg tk"
 install_sasquatch
 install_yaffshiv
 install_jefferson
